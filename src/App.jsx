@@ -1,33 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react"
+import passwordGen from "./passwordGen"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [config, setConfig] = useState({ alphabetLower: true, alphabetUpper: true, numbers: true, symbols: true, length: 6})
+
+  const [password, setPassword] = useState('')
+
+  const generate = () => setPassword(passwordGen(config))
+
+  useEffect(() => {
+    generate()
+  }, [config])
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setConfig((prevConfig) => ({
+      ...prevConfig,
+      [name]: checked,
+    }));
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(password);
+  };
+
+  const newPsw = () => generate()
+
+  const handleRange = (e) => {
+    setConfig((prevConfig) => ({
+      ...prevConfig,
+      length: e.target.value,
+    }));
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="container">
+        <div className="password">
+        <input type="text" value={password} readOnly />
+        <button onClick={copyToClipboard}>Copy</button>
+        <button onClick={newPsw}>New</button>
+        </div>
+        <div className="checkbox-group">
+        <label>
+          <input type="checkbox" name="alphabetLower" checked={config.alphabetLower} onChange={handleCheckboxChange} />Uppercase
+        </label>
+        <label>
+          <input type="checkbox" name="alphabetUpper" checked={config.alphabetUpper} onChange={handleCheckboxChange} />Lowercase
+        </label>
+        <label>
+          <input type="checkbox" name="numbers" checked={config.numbers} onChange={handleCheckboxChange} />Numbers
+        </label>
+        <label>
+          <input type="checkbox" name="symbols" checked={config.symbols} onChange={handleCheckboxChange} />Symbols
+        </label>
+        </div>
+        <div className="length-container">
+        <label>
+          {config.length}<input onChange={handleRange} type="range" min="6" max="20" step="1" value={config.length} />Length
+        </label>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
