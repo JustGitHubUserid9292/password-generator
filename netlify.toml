@@ -1,5 +1,4 @@
 [build]
-  publish = "dist"
   command = "vite build --minify=false"
 
 [build.environment]
