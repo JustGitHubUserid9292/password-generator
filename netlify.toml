@@ -1,6 +1,0 @@
-[build]
-  command = "npm install && vite build" 
-  publish = "dist" 
-
-[build.environment]
-  NODE_VERSION = "14"
