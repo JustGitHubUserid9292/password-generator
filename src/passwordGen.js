@@ -1,11 +1,11 @@
-function validatePassword(password, config) {
-    if (config.alphabetLower && !/[a-z]/.test(password)) return false
+function validatePassword(psw, config) {
+    if (config.alphabetLower && !/[a-z]/.test(psw)) return false
     
-    if (config.alphabetUpper && !/[A-Z]/.test(password)) return false
+    if (config.alphabetUpper && !/[A-Z]/.test(psw)) return false
     
-    if (config.numbers && !/\d/.test(password)) return false
+    if (config.numbers && !/\d/.test(psw)) return false
     
-    if (config.symbols && !/[!@#$%^&*()_+=-]/.test(password)) return false
+    if (config.symbols && !/[!@#$%^&*()_+=-]/.test(psw)) return false
   
     return true;
 }

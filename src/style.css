@@ -20,7 +20,7 @@ body {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 950px;
+    width: 950px;   /*/ for mobile width: 420px */
     text-align: center;
 }
 
@@ -94,10 +94,64 @@ button {
     padding-bottom: 10px;
 }
 
+
 input[type="range"] {
-    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
     margin-left: 10px;
+    background: #ddd; 
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
 }
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: #ddd; 
+    border-radius: 5px;
+    position: relative;
+}
+
+input[type="range"]::before {
+    content: '';
+    position: absolute;
+    height: 8px;
+    background: #2a57eb; 
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    width: var(--progress-width);
+    z-index: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 2px solid #2a57eb;
+    border-radius: 50%;
+    margin-top: -5px;
+    position: relative;
+    z-index: 2;
+    transition: 0.2s;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    background: #2a57eb;
+    border-color: white;
+    transform: scale(1.1);
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.2);
+}
+
+
 
 .checkbox-group {
     display: flex;
@@ -138,7 +192,7 @@ input[type="checkbox"]::before {
 }
 
 input[type="checkbox"]:checked {
-    background: #2a57eb;;
+    background: #2a57eb;
 }
 
 input[type="checkbox"]:checked::before {
@@ -170,4 +224,47 @@ input[type="number"] {
 
 .copy-notification.hidden {
     opacity: 0;
+}
+
+.strength-container {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+  
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+/*/Dark Theme/*/
+
+body.dark-theme {
+    background-color: #121212;
+    color: white;
+}
+
+.container.dark-theme {
+    background: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(108, 108, 108, 0.1);
+}
+
+.password-display.dark-theme {
+    background: #585858;
+}
+
+input[type="text"].dark-theme {
+    color: white;
+}
+
+button.dark-theme {
+    color: white;
+}
+
+.config-title.dark-theme, .remember-title.dark-theme {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
