@@ -276,4 +276,7 @@ button.dark-theme {
     input[type="range"] {
         width: 100px;
     }
+    button {
+        padding: 2px 5px;
+    }
 }
