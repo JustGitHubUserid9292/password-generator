@@ -27,3 +27,7 @@ LeetKey provides an intuitive and minimalistic UI:
 - Configuration section with toggles for customization
 
 - Passphrase generation for easy-to-remember secure passwords
+
+## Deploy
+
+- https://leetkey.netlify.app/
