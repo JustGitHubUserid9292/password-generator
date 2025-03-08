@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1be5846d-dffb-493a-aca3-deabf590c5c7/deploy-status)](https://app.netlify.com/sites/leetkey/deploys)
+
 # <img src="public/logo.png" alt="Описание изображения" width="25"/> LeetKey - Secure Password Generator
 
 LeetKey is a powerful and user-friendly password generator built with React, designed for secure and customizable password creation.
