@@ -30,6 +30,6 @@ LeetKey provides an intuitive and minimalistic UI:
 
 - Passphrase generation for easy-to-remember secure passwords
 
-## </> Deploy
+## 🌐 Deploy
 
 - https://leetkey.netlify.app/
