@@ -270,8 +270,10 @@ button.dark-theme {
 }
 
 @media screen and (max-width: 480px) {
-    body {
-        overflow-x: hidden;
+    html, body {
+        overflow-x: hidden; 
+        margin: 0; 
+        padding: 0;
     }
     .container {
         width: 400px;
