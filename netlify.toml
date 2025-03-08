@@ -1,3 +1,6 @@
 [build]
   publish = "dist"
   command = "vite build --minify=false"
+
+[build.environment]
+  NODE_VERSION = "14"
