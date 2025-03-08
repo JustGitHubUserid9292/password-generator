@@ -1,4 +1,4 @@
-# <img src="public/logo.png" alt="Описание изображения" width="300"/> LeetKey - Secure Password Generator
+# <img src="public/logo.png" alt="Описание изображения" width="100"/> LeetKey - Secure Password Generator
 
 LeetKey is a powerful and user-friendly password generator built with React, designed for secure and customizable password creation.
 
