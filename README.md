@@ -1,4 +1,4 @@
-# LeetKey - Secure Password Generator
+# ![Иконка](/public/logo.png) LeetKey - Secure Password Generator
 
 LeetKey is a powerful and user-friendly password generator built with React, designed for secure and customizable password creation.
 
