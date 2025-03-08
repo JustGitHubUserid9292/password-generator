@@ -271,6 +271,9 @@ button.dark-theme {
 
 @media screen and (max-width: 480px) {
     .container {
-        width: 420px;
+        width: 400px;
+    }
+    input[type="range"] {
+        width: 100px;
     }
 }
